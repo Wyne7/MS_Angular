@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business UI</title>
+    <!-- Add your CSS styling here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 30%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-left: 32px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Order Form</h2>
+    <label for="orderName">Order Name</label>
+    <input type="text" id="orderName" [(ngModel)]="dataResponse.orderDto.orederName">
+
+    <label for="paymentType">Payment Type</label>
+    <select id="paymentType" [(ngModel)]="dataResponse.paymentDto.paymentType">
+        <option value="cash">Cash</option>
+        <option value="kpay">K.pay</option>
+    </select>
+
+    <label for="totalPrice">Total Price</label>
+    <input type="text" id="totalPrice" [(ngModel)]="dataResponse.paymentDto.total_price">
+
+    <button type="button" (click)="sendFirebase()">Save Order</button>
+</body>
+</html>
